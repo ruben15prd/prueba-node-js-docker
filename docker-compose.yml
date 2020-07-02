@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  nodejs_server:
+    build: ./nodejs_server
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - NODEJS_WORK_DIRECTORY=${NODEJS_WORK_DIRECTORY}
+    volumes:
+      - ./app-node-docker/:${NODEJS_WORK_DIRECTORY}
